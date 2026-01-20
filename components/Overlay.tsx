@@ -1,8 +1,13 @@
 "use client";
 
+import React, { RefObject } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-export default function Overlay({ containerRef }: { containerRef: React.RefObject<HTMLDivElement> }) {
+interface OverlayProps {
+    containerRef: RefObject<HTMLDivElement>;
+}
+
+export default function Overlay({ containerRef }: OverlayProps) {
     const { scrollYProgress } = useScroll({
         target: containerRef,
         offset: ["start start", "end end"],
@@ -35,17 +40,19 @@ export default function Overlay({ containerRef }: { containerRef: React.RefObjec
                 <span className="inline-block rounded-full bg-white/10 px-4 py-1.5 text-sm uppercase tracking-wider text-white/80 backdrop-blur-md">
                     Available for Hire
                 </span>
-                <h1 className="mt-6 text-6xl font-bold tracking-tight text-white md:text-8xl lg:text-9xl">
+                <h1 className="mt-6 text-6xl font-bold tracking-tight text-white md:text-8xl lg:text-9xl [text-shadow:0_4px_24px_rgba(0,0,0,0.5)]">
                     Md Saqib Shakil
                 </h1>
-                <p className="mt-4 text-xl font-light text-gray-300 md:text-2xl">
+                <p className="mt-4 text-xl font-light text-slate-300 md:text-2xl [text-shadow:0_2px_12px_rgba(0,0,0,0.8)]">
                     AI Consultant · Engineer · Content Strategist
                 </p>
-                <div className="mt-8">
-                    <p className="text-sm font-medium tracking-wide text-indigo-400">
-                        Not just another "AI guy."<br />
-                        I build AI systems that deliver real-world impact.
-                    </p>
+                <div className="mt-10 flex justify-center">
+                    <div className="px-6 py-3 rounded-2xl bg-black/20 backdrop-blur-md border border-white/10 shadow-2xl">
+                        <p className="text-sm md:text-base font-medium tracking-wide text-fuchsia-400">
+                            Not just another "AI guy."<br />
+                            <span className="text-white/90">I build AI systems that deliver real-world impact.</span>
+                        </p>
+                    </div>
                 </div>
             </motion.div>
 

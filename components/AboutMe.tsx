@@ -19,10 +19,16 @@ export default function AboutMe() {
                         <p>
                             I’m <span className="text-white font-medium">Md Saqib Shakil</span> — an AI Consultant & Full-Stack Engineer.
                         </p>
-                        <p>
-                            Not just another "AI guy."
-                            I build AI systems that <span className="text-white border-b border-indigo-500/50">deliver real-world impact</span>.
-                        </p>
+                        <div className="p-8 md:p-10 rounded-[2.5rem] bg-white/[0.03] backdrop-blur-2xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] relative overflow-hidden group">
+                            <span className="relative z-10 block">
+                                Not just another "AI guy."
+                                <br className="hidden md:block" />
+                                I build AI systems that <span className="text-white border-b-2 border-indigo-500/50">deliver real-world impact</span>.
+                            </span>
+                            {/* Accent Glow */}
+                            <div className="absolute -top-24 -right-24 w-48 h-48 bg-indigo-500/10 blur-[60px] rounded-full group-hover:bg-indigo-500/20 transition-colors duration-500" />
+                            <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-purple-500/10 blur-[60px] rounded-full group-hover:bg-purple-500/20 transition-colors duration-500" />
+                        </div>
                         <hr className="border-white/10 my-8" />
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                             <div>
